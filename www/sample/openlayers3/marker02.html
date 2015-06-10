@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marker Expample</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.6.0/ol.js"></script>
+</head>
+<body>
+<div id="map" style="width:100%; height: 800px;"></div>
+
+<script type="text/javascript">
+function convertCoordinate(longitude, latitude) {
+  return ol.proj.transform([longitude, latitude], "EPSG:4326","EPSG:900913");
+}
+
+// Open Street Map Layer
+var osmLayer = new ol.layer.Tile({
+  source: new ol.source.OSM()
+});
+
+var map = new ol.Map({
+  layers: [ osmLayer ],
+  target: document.getElementById('map'),
+  view: new ol.View({
+    center: convertCoordinate(139.745433, 35.658579),
+    zoom: 18
+  })
+});
+
+function makeMarkerOverlay(imgSrc, coordinate) {
+  var imgElement = document.createElement('img');
+  imgElement.setAttribute('src', imgSrc);
+  var markerOverlay = new ol.Overlay({
+    element: imgElement,
+    position: coordinate,
+    positioning: 'bottom-center'
+  });
+  return markerOverlay;
+}
+
+var markerA = makeMarkerOverlay('marker-blue.png', convertCoordinate(139.745229, 35.658227));
+var markerB = makeMarkerOverlay('marker-red.png', convertCoordinate(139.744165, 35.658013));
+var markerC = makeMarkerOverlay('marker-red.png', convertCoordinate(139.744262, 35.659695));
+
+map.addOverlay(markerA);
+map.addOverlay(markerB);
+map.addOverlay(markerC);
+</script>
+</body>
+</html>
