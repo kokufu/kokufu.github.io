@@ -6,5 +6,5 @@ requirejs.config({
 
 // require(["module/name", ...], function(params){ ... });
 require(["Amazon"], function ($) {
-  // Do nothing
+  alert($);
 });
