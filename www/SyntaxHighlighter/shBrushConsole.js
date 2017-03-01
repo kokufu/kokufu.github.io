@@ -22,7 +22,7 @@
     function Brush()
     {
         this.regexList = [
-            { regex: /^\S*(#|>|\$|(&gt;))\s+(\\\n|.)*/gm,           css: 'bold' },
+            { regex: /^\S*(#|>|\$|%|(&gt;))\s+(\\\n|.)*/gm,           css: 'bold' },
             { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' }, // double quoted strings
             { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' }  // single quoted strings
         ];
