@@ -7,7 +7,7 @@
  *
  * @version
  * 3.0.83 (July 02 2010)
- * 
+ *
  * @copyright
  * Copyright (C) 2004-2010 Alex Gorbatchev.
  *
@@ -16,23 +16,23 @@
  */
 ;(function()
 {
-	// CommonJS
-	typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
+    // CommonJS
+    typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
 
-	function Brush()
-	{
-		this.regexList = [
-			{ regex: /^[#|>|\$|(&gt;)].*$/gm,										css: 'bold' },
-			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,			css: 'string' },		// double quoted strings
-			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,			css: 'string' }		// single quoted strings
-			];
-	}
+    function Brush()
+    {
+        this.regexList = [
+            { regex: /^(#|>|\$|(&gt;))(\\\n|.)*/gm,                 css: 'bold' },
+            { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' }, // double quoted strings
+            { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' }  // single quoted strings
+        ];
+    }
 
-	Brush.prototype	= new SyntaxHighlighter.Highlighter();
-	Brush.aliases	= ['console'];
+    Brush.prototype    = new SyntaxHighlighter.Highlighter();
+    Brush.aliases    = ['console'];
 
-	SyntaxHighlighter.brushes.Console = Brush;
+    SyntaxHighlighter.brushes.Console = Brush;
 
-	// CommonJS
-	typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
+    // CommonJS
+    typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
 })();
