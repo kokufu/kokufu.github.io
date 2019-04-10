@@ -198,7 +198,7 @@
 	};
 
 	Brush.prototype	= new SyntaxHighlighter.Highlighter();
-	Brush.aliases	= ['mql'];
+	Brush.aliases	= ['mq4'];
 
 	SyntaxHighlighter.brushes.Cpp = Brush;
 
