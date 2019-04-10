@@ -192,7 +192,7 @@
 			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// strings
 			{ regex: /^ *#.*/gm,										css: 'preprocessor' },
 			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1 bold' },
-			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions bold' },
+			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions' },
 			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' }
 			];
 	};
