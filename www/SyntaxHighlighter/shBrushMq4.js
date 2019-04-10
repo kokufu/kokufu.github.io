@@ -30,7 +30,7 @@
 		var keywords = 'break case class const final ' +
                    'continue private public protected ' +
                    'default delete do dynamic_cast ' +
-                   'else enum extern if for friend inline ' +
+                   'else enum extern input if for friend inline ' +
                    'new return sizeof static struct switch template this ' +
                    'true false typedef typename union ' +
                    'virtual void while NULL';
@@ -183,7 +183,8 @@
                     'WindowOnDropped WindowPriceMax WindowPriceMin ' +
                     'WindowPriceOnDropped WindowRedraw WindowScreenShot ' +
                     'WindowsTotal WindowTimeOnDropped WindowXOnDropped ' +
-                    'WindowYOnDropped Year ZeroMemory';
+                    'WindowYOnDropped Year ZeroMemory ' +
+										'printf';
 
 		this.regexList = [
 			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },			// one line comments
